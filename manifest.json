@@ -22,6 +22,10 @@
       "js": ["jetbrains-toolbox-github-public.js"]
     },
     {
+      "matches": ["https://github.bus.zalan.do/*"],
+      "js": ["jetbrains-toolbox-github-public.js"]
+    },
+    {
       "matches": ["https://gitlab.com/*"],
       "js": ["jetbrains-toolbox-gitlab-public.js"]
     },
@@ -39,7 +43,9 @@
     "nativeMessaging",
     "storage",
     "https://github.com/*",
+    "https://github.bus.zalan.do/*",
     "https://api.github.com/*",
+    "https://api.github.bus.zalan.do/*",
     "https://gitlab.com/*",
     "https://bitbucket.org/*",
     "https://api.bitbucket.org/*"

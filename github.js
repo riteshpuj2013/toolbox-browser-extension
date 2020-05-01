@@ -171,9 +171,12 @@ const addCloneActionEventHandler = (btn, githubMetadata) => {
 
     const {toolTag} = e.currentTarget.dataset;
     getProtocol().then(protocol => {
-      const cloneUrl = protocol === CLONE_PROTOCOLS.HTTPS
+      let cloneUrl = protocol === CLONE_PROTOCOLS.HTTPS
         ? getHttpsCloneUrl(githubMetadata)
         : getSshCloneUrl(githubMetadata);
+      if (githubMetadata.clone_url.includes('zalan.do')) {
+        cloneUrl = getSshCloneUrl(githubMetadata);
+      }
       const action = getToolboxURN(toolTag, cloneUrl);
 
       callToolbox(action);
